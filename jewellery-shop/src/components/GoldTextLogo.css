@@ -1,0 +1,16 @@
+/* src/components/GoldTextLogo.css */
+
+.gold-logo {
+  font-size: 27px;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  text-align: center;
+  color: #FFD700;
+  text-shadow:
+    1px 1px 0 #b8860b,
+    2px 2px 1px #FFD700,
+    3px 3px 2px #000;
+  background: linear-gradient(to bottom, #fff8dc, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
