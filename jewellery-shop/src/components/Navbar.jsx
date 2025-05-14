@@ -5,7 +5,6 @@ function Navbar() {
   return (
     <nav className="bg-white shadow-md p-4">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-        
         {/* Icons Top Row (Mobile only) */}
         <div className="flex justify-end mb-2 md:hidden space-x-4">
           <Link to="/shop">
@@ -18,7 +17,7 @@ function Navbar() {
           </Link>
           <Link to="/wishlist">
             <lord-icon
-              src="https://cdn.lordicon.com/xyboiuok.json"  // Heart icon
+              src="https://cdn.lordicon.com/xyboiuok.json" // Heart icon
               trigger="hover"
               colors="primary:#121331,secondary:#f472b6"
               style={{ width: "30px", height: "28px" }}
@@ -87,7 +86,7 @@ function Navbar() {
           </Link>
           <Link to="/wishlist">
             <lord-icon
-              src="https://cdn.lordicon.com/xyboiuok.json"  // Heart icon
+              src="https://cdn.lordicon.com/xyboiuok.json" // Heart icon
               trigger="hover"
               colors="primary:#121331,secondary:#f472b6"
               style={{ width: "30px", height: "28px" }}
