@@ -1,20 +1,29 @@
-import ProductCard from '../components/ProductCard';
+import { useSearch } from "../context/SearchContext";
+import ProductCard from "../components/ProductCard";
+import products from "../data/products"; // Wherever your product list is
 
-const allProducts = [
-  { id: 1, name: 'Gold Necklace', price: 49999, image: '/images/gold-necklace.jpg' },
-  { id: 2, name: 'Diamond Ring', price: 29999, image: '/images/diamond-ring.jpg' },
-  { id: 3, name: 'Silver Bangles', price: 19999, image: '/images/silver-bangles.jpg' }
-];
+function Shop() {
+  const { query } = useSearch();
 
-const Shop = () => {
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(query.toLowerCase())
+  );
+
   return (
     <div className="p-4">
-      <h1 className="text-3xl font-bold mb-4">Shop All Products</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {allProducts.map(product => <ProductCard key={product.id} product={product} />)}
+      <h1 className="text-2xl font-bold mb-4">Shop</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {filteredProducts.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+        {filteredProducts.length === 0 && (
+          <p className="col-span-full text-gray-500 text-center">
+            No products found for "{query}"
+          </p>
+        )}
       </div>
     </div>
   );
-};
+}
 
 export default Shop;

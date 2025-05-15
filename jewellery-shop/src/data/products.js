@@ -13,4 +13,5 @@ const products = [
   { id: 12, name: 'Silver Necklace', price: 13999, image: '/images/silver-necklace.jpg' }
 ];
 
+
 export default products;
